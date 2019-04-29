@@ -37,13 +37,6 @@ public class EmployeeResource {
         this.employeeRepository = employeeRepository;
     }
 
-    /**
-     * POST  /employees : Create a new employee.
-     *
-     * @param employee the employee to create
-     * @return the ResponseEntity with status 201 (Created) and with body the new employee, or with status 400 (Bad Request) if the employee has already an ID
-     * @throws URISyntaxException if the Location URI syntax is incorrect
-     */
     @PostMapping("/employees")
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) throws URISyntaxException {
         log.debug("REST request to save Employee : {}", employee);
